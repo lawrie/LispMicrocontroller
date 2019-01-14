@@ -20,7 +20,7 @@ module rom
     #(parameter MEM_SIZE = 4096,
     parameter WORD_SIZE = 20,
     parameter ADDR_SIZE = 16,
-    parameter INIT_FILE="")
+    parameter INIT_FILE="program.hex")
 
     (input                      clk,
     input[ADDR_SIZE - 1:0]      addr_i,

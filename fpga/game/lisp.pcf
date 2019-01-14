@@ -1,0 +1,25 @@
+set_io clk100 129
+
+set_io hsync_o 8
+set_io vsync_o 7
+
+set_io red_o[3] 15
+set_io red_o[2] 16
+set_io red_o[1] 19
+set_io red_o[0] 20
+
+set_io green_o[3] 1
+set_io green_o[2] 2
+set_io green_o[1] 9
+set_io green_o[0] 10
+
+set_io blue_o[3] 11
+set_io blue_o[2] 12
+set_io blue_o[1] 17
+set_io blue_o[0] 18
+
+set_io buttons[3] 105
+set_io buttons[2] 102
+set_io buttons[1] 99
+set_io buttons[0] 97
+

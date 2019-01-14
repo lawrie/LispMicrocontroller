@@ -15,7 +15,7 @@
 //
 
 module top(
-    input                   clk50,
+    input                   clk100,
     output                  hsync_o,
     output                  vsync_o,
     output [3:0]            red_o,
@@ -30,15 +30,20 @@ module top(
     reg[15:0] register_read_value = 0;
     reg[3:0] buttons_sync0 = 0;
     reg[3:0] buttons_sync1 = 0;
-    reg clk = 0;
     wire[5:0] collision;
     wire in_vblank;
     reg reset = 1;
     reg[3:0] reset_count = 7;
 
-    // Divide 50 Mhz clock down to 25 Mhz
-    always @(posedge clk50)
-        clk <= ~clk;
+    // Divide 100 Mhz clock down to 25 Mhz
+
+   reg [1:0]  clkpre = 2'b00;     // prescaler, from 100MHz to 25MHz
+
+   always @(posedge clk100)
+     begin
+        clkpre <= clkpre + 1;
+     end
+   wire clk = clkpre[1];
 
     ulisp l(
         .clk(clk),
